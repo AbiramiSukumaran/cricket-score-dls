@@ -8,9 +8,9 @@ import { environment } from './../environments/environment';
 
 const { GRAPHQL_URI, REALM_APP_ID } = environment;
 
-if (!REALM_APP_ID) {
+/*if (!REALM_APP_ID) {
   throw new Error('Missing environment variable: REALM_APP_ID');
-}
+}*/
 
 const app = new Realm.App(REALM_APP_ID);
 
@@ -30,10 +30,10 @@ async function getValidAccessToken() {
 }
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
-    if (!GRAPHQL_URI) {
+/*    if (!GRAPHQL_URI) {
       throw new Error('Missing environment variable: GRAPHQL_URI');
     }
-
+*/
     const http = httpLink.create({ uri: GRAPHQL_URI });
 
     // Create a new ApolloLink that appends the access token to the headers of each GraphQL request.
